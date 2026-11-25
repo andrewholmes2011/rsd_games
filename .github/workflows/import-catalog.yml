@@ -1,0 +1,27 @@
+name: Import Commga catalog
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "23 8 * * *"
+permissions:
+  contents: write
+jobs:
+  import:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - run: npm run catalog:import
+      - name: Commit catalog snapshot
+        run: |
+          if git diff --quiet -- public/catalog.json; then
+            echo "Catalog unchanged."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add public/catalog.json
+          git commit -m "Update Commga game catalog"
+          git push
