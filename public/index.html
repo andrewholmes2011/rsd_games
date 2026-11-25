@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#0b0d18"><meta name="description" content="Commga — discover and play browser games.">
+<link rel="manifest" href="/manifest.webmanifest"><link rel="stylesheet" href="/app.css">
+<title>Commga — Browser Games</title>
+</head>
+<body>
+<header class="topbar"><a class="brand" href="/"><span class="brand-mark">c</span>commga</a>
+<label class="search"><span>⌕</span><input id="search" type="search" placeholder="Search games..." autocomplete="off"></label>
+<div class="top-actions"><span id="status" class="status">Connecting</span><button id="accountBtn" class="button ghost">Sign in</button></div></header>
+<main class="wrap">
+<section class="hero"><div class="hero-copy"><span class="eyebrow">YOUR NEXT FAVORITE GAME</span><h1>Play something<br><span>awesome.</span></h1><p>Discover a growing collection of browser games. Pick a game and jump right in.</p><div class="hero-actions"><a id="featuredPlay" class="button primary" href="#">Explore games <span>→</span></a><button id="randomBtn" class="button secondary">Surprise me</button></div></div><div class="hero-art"><div class="orb orb-a"></div><div class="orb orb-b"></div><div class="art-card"><span class="art-icon">✦</span><strong>GAME<br>ON</strong><small>COMMGA ARCADE</small></div></div></section>
+<section class="section"><div class="section-head"><div><span class="eyebrow">PICK UP WHERE YOU LEFT OFF</span><h2>Recently played</h2></div></div><div id="recent" class="game-row empty">Your recently played games will appear here.</div></section>
+<section class="section"><div class="section-head"><div><span class="eyebrow">FIND YOUR NEXT FAVORITE</span><h2>Explore games</h2></div><select id="sort" class="select"><option value="popular">Most popular</option><option value="az">A to Z</option><option value="new">Recently updated</option></select></div>
+<div id="categories" class="chips"></div><div id="games" class="game-grid"><div class="loading">Loading the game catalog…</div></div><button id="moreBtn" class="button secondary more" hidden>Show more</button></section>
+<section class="section"><div class="section-head"><div><span class="eyebrow">YOUR COLLECTION</span><h2>Saved games</h2></div></div><div id="saved" class="game-row empty">Save games on this device to find them quickly.</div></section>
+</main>
+<footer><a class="brand small" href="/"><span class="brand-mark">c</span>commga</a><span>Made for the joy of playing.</span><a href="mailto:feedback@commga.example">Feedback</a></footer>
+<dialog id="accountDialog"><form method="dialog" class="dialog-close"><button aria-label="Close">×</button></form><div class="dialog-content"><span class="eyebrow">COMMGA ACCOUNT</span><h2 id="authTitle">Welcome back</h2><p class="muted">Sign in to sync your likes and game history.</p><form id="authForm"><label>Username<input name="username" minlength="3" maxlength="24" required autocomplete="username"></label><label id="emailWrap" hidden>Email<input name="email" type="email" autocomplete="email"></label><label>Password<input name="password" type="password" minlength="10" required autocomplete="current-password"></label><button class="button primary full" type="submit" id="authSubmit">Sign in</button></form><p id="authMessage" class="form-message" role="status"></p><button id="toggleAuth" class="text-button">Create an account</button><button id="logoutBtn" class="text-button" hidden>Sign out</button></div></dialog>
+<script src="/app.js" defer></script>
+</body></html>
