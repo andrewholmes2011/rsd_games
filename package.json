@@ -1,0 +1,1 @@
+{"name":"commga","version":"1.0.0","private":true,"type":"module","scripts":{"dev":"wrangler dev","deploy":"wrangler deploy","db:local":"wrangler d1 execute commga-db --local --file=./schema.sql","db:remote":"wrangler d1 execute commga-db --remote --file=./schema.sql","catalog:import":"node scripts/import-catalog.mjs"},"devDependencies":{"wrangler":"^4.50.0"}}
