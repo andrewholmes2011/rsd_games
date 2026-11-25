@@ -1,0 +1,9 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "commga",
+  "main": "src/worker.js",
+  "compatibility_date": "2026-11-25",
+  "assets": { "directory": "./public", "binding": "ASSETS", "run_worker_first": ["/api/*"] },
+  "d1_databases": [{ "binding": "DB", "database_name": "commga-db", "database_id": "272c88d0-60db-4555-8fbe-2b001095e959" }],
+  "observability": { "enabled": true, "logs": { "enabled": true, "invocation_logs": true } }
+}
